@@ -30,5 +30,14 @@
     <Compile Include="EventHandler.py" />
     <Compile Include="SpinWheel.py" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\ring segments broken.png" />
+    <Content Include="Resources\Images\ring segments.png" />
+    <Content Include="Resources\Images\ring.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>

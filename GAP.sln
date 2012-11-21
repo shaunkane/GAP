@@ -3,14 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Controller_Logger", "Controller_Logger\Controller_Logger.pyproj", "{C2DD6187-C0A3-4CCE-94A4-F9EF009CC236}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Button_Pusher", "Button_Pusher\Button_Pusher.vcxproj", "{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
 		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C2DD6187-C0A3-4CCE-94A4-F9EF009CC236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2DD6187-C0A3-4CCE-94A4-F9EF009CC236}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C2DD6187-C0A3-4CCE-94A4-F9EF009CC236}.Debug|Win32.ActiveCfg = Debug|Any CPU
 		{C2DD6187-C0A3-4CCE-94A4-F9EF009CC236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2DD6187-C0A3-4CCE-94A4-F9EF009CC236}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C2DD6187-C0A3-4CCE-94A4-F9EF009CC236}.Release|Win32.ActiveCfg = Release|Any CPU
+		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Debug|Win32.Build.0 = Debug|Win32
+		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Release|Any CPU.ActiveCfg = Release|Win32
+		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Release|Win32.ActiveCfg = Release|Win32
+		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
