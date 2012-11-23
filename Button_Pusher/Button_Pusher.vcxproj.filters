@@ -18,9 +18,15 @@
     <ClCompile Include="button_pusher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="xbox_controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="button_pusher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xbox_controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

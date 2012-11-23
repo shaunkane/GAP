@@ -1,17 +1,11 @@
-// compile with: /D_UNICODE /DUNICODE / DWIN32 / D_WINDOWS /c
-
 #include "button_pusher.h"
 
-// Boilerplate Win32 code from MSDN 
-// (http://msdn.microsoft.com/en-us/library/bb384843.aspx)
-int WINAPI WinMain(HINSTANCE hInstance,
-				   HINSTANCE hPrevInstance,
-				   LPSTR lpCmdLine,
-				   int nCmdShow)
+// Lots of boilerplate Win32 code from MSDN (http://msdn.microsoft.com/en-us/library/bb384843.aspx).
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	WNDCLASSEX wcex;
 
-	wcex.cbSize = sizeof(WNDCLASSEX);
+	wcex.cbSize			= sizeof(WNDCLASSEX);
 	wcex.style          = CS_HREDRAW | CS_VREDRAW;
 	wcex.lpfnWndProc    = WndProc;
 	wcex.cbClsExtra     = 0;
@@ -19,22 +13,22 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	wcex.hInstance      = hInstance;
 	wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_APPLICATION));
 	wcex.hCursor        = LoadCursor(NULL, IDC_ARROW);
-	wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
+	wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW + 1);
 	wcex.lpszMenuName   = NULL;
-	wcex.lpszClassName  = szWindowClass;
+	wcex.lpszClassName  = WINDOW_CLASS;
 	wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_APPLICATION));
 
 	if (!RegisterClassEx(&wcex))
 	{
 		MessageBox(NULL,
 			_T("Call to RegisterClassEx failed!"),
-			_T("Win32 Guided Tour"),
+			_T("Button Pusher!"),
 			NULL);
 
 		return 1;
 	}
 
-	hInst = hInstance; // Store instance handle in our global variable
+	hInst = hInstance; // Store instance handle in our global variable.
 
 	// The parameters to CreateWindow explained:
 	// szWindowClass: the name of the application
@@ -47,11 +41,11 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	// hInstance: the first parameter from WinMain
 	// NULL: not used in this application
 	HWND hWnd = CreateWindow(
-		szWindowClass,
-		szTitle,
+		WINDOW_CLASS,
+		WINDOW_TITLE,
 		WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, CW_USEDEFAULT,
-		500, 100,
+		250, 250,
 		NULL,
 		NULL,
 		hInstance,
@@ -62,59 +56,61 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	{
 		MessageBox(NULL,
 			_T("Call to CreateWindow failed!"),
-			_T("Win32 Guided Tour"),
+			_T("Button Pusher!"),
 			NULL);
 
 		return 1;
 	}
 
 	// The parameters to ShowWindow explained:
-	// hWnd: the value returned from CreateWindow
-	// nCmdShow: the fourth parameter from WinMain
-	ShowWindow(hWnd,
-		nCmdShow);
+	// hWnd: The value returned from CreateWindow.
+	// nCmdShow: The fourth parameter from WinMain.
+	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
 
 	// Main message loop:
-	MSG msg;
-	while (GetMessage(&msg, NULL, 0, 0))
+	MSG message;
+
+	while (GetMessage(&message, NULL, 0, 0))
 	{
-		TranslateMessage(&msg);
-		DispatchMessage(&msg);
+		TranslateMessage(&message);
+		DispatchMessage(&message);
+
+		PollController(hWnd)
 	}
 
-	return (int) msg.wParam;
+	return (int) message.wParam;
 }
 
-//
-//  FUNCTION: WndProc(HWND, UINT, WPARAM, LPARAM)
-//
-//  PURPOSE:  Processes messages for the main window.
-//
-//  WM_PAINT    - Paint the main window
-//  WM_DESTROY  - post a quit message and return
-//
-//
+/*
+FUNCTION: WndProc(HWND, UINT, WPARAM, LPARAM)
+
+PURPOSE:  Processes messages for the main window.
+
+WM_PAINT    - Paint the main window.
+WM_DESTROY  - Post a quit message and return.
+*/
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	PAINTSTRUCT ps;
 	HDC hdc;
-	TCHAR greeting[] = _T("Hello, World!");
+	int count = 0;
+	TCHAR greeting[] = _T("Hello, Button Pusher!");
 
 	switch (message)
 	{
 	case WM_PAINT:
 		hdc = BeginPaint(hWnd, &ps);
-
 		// Here your application is laid out.
-		// For this introduction, we just print out "Hello, World!"
+		// For this introduction, we just print out "Hello, Button Pusher!"
 		// in the top left corner.
-		TextOut(hdc,
-			5, 5,
-			greeting, _tcslen(greeting));
+		TextOut(hdc, 5, 5, greeting, _tcslen(greeting));
 		// End application-specific layout section.
 
 		EndPaint(hWnd, &ps);
+		break;
+	case WM_CLOSE:
+		DestroyWindow(hWnd);
 		break;
 	case WM_DESTROY:
 		PostQuitMessage(0);

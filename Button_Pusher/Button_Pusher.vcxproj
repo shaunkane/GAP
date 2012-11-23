@@ -77,9 +77,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="button_pusher.cpp" />
+    <ClCompile Include="xbox_controller.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="button_pusher.h" />
+    <ClInclude Include="xbox_controller.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
