@@ -112,10 +112,10 @@ JOYBALLMOTION\
 def pJoyHatMotion(event, file):
     s = str(datetime.datetime.now()) + ",\
 JOYHATMOTION\
-," + str(event.joy) + "\
+," + str(Controller.hatEng(event)) + "\
 ," + str(event.hat) + "\
 ," + str(event.value) + "\
-," + str(Controller.hatEng(event)) + "\n"
+," + str(event.joy) + "\n"
     
     print(s)
     file.write(s)
@@ -123,9 +123,9 @@ JOYHATMOTION\
 def pJoyButtonUp(event, file):
     s = str(datetime.datetime.now()) + ",\
 JOYBUTTONUP\
-," + str(event.joy) + "\
+," + str(Controller.buttonEng(event)) + "\
 ," + str(event.button) + "\
-," + str(Controller.buttonEng(event)) + "\n"
+," + str(event.joy) + "\n"
 
     print(s)
     file.write(s)
@@ -133,9 +133,9 @@ JOYBUTTONUP\
 def pJoyButtonDown(event, file):
     s = str(datetime.datetime.now()) + ",\
 JOYBUTTONDOWN\
-," + str(event.joy) + "\
+," + str(Controller.buttonEng(event)) + "\
 ," + str(event.button) + "\
-," + str(Controller.buttonEng(event)) + "\n"
+," + str(event.joy) + "\n"
 
     print(s)
     file.write(s)

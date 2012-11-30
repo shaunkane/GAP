@@ -5,6 +5,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Controller_Logger", "Contro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Button_Pusher", "Button_Pusher\Button_Pusher.vcxproj", "{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Button_Spitter", "Button_Spitter\Button_Spitter.vcxproj", "{A6617307-5D8F-4087-AD4E-7948A00A8869}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,16 @@ Global
 		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Release|Win32.ActiveCfg = Release|Win32
 		{BC21AD7A-36DF-4369-ADC9-D0AE3207AA81}.Release|Win32.Build.0 = Release|Win32
+		{A6617307-5D8F-4087-AD4E-7948A00A8869}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{A6617307-5D8F-4087-AD4E-7948A00A8869}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{A6617307-5D8F-4087-AD4E-7948A00A8869}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{A6617307-5D8F-4087-AD4E-7948A00A8869}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A6617307-5D8F-4087-AD4E-7948A00A8869}.Debug|Win32.Build.0 = Debug|Win32
+		{A6617307-5D8F-4087-AD4E-7948A00A8869}.Release|Any CPU.ActiveCfg = Release|Win32
+		{A6617307-5D8F-4087-AD4E-7948A00A8869}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{A6617307-5D8F-4087-AD4E-7948A00A8869}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{A6617307-5D8F-4087-AD4E-7948A00A8869}.Release|Win32.ActiveCfg = Release|Win32
+		{A6617307-5D8F-4087-AD4E-7948A00A8869}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
